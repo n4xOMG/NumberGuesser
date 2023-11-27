@@ -3,9 +3,9 @@ D:\Window\DoAn\NumberGuessing\NumberGuessing\bin\Debug\NumberGuessing.exe
 D:\Window\DoAn\NumberGuessing\NumberGuessing\bin\Debug\NumberGuessing.pdb
 D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.csproj.AssemblyReference.cache
 D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.csproj.SuggestedBindingRedirects.cache
-D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.Form1.resources
 D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.Properties.Resources.resources
 D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.csproj.GenerateResource.cache
 D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.csproj.CoreCompileInputs.cache
 D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.exe
 D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.pdb
+D:\Window\DoAn\NumberGuessing\NumberGuessing\obj\Debug\NumberGuessing.NumberGuessingGame.resources
