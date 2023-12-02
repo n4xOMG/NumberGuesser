@@ -19,14 +19,6 @@ namespace NumberGuessing
         {
         }
 
-        public Player(int playerID, string playerName, int playCount, int winCount, int loseCount)
-        {
-            this.playerID = playerID;
-            this.playerName = playerName;
-            this.playCount = playCount;
-            this.winCount = winCount;
-            this.loseCount = loseCount;
-        }
         public Player(string playerName, int playCount, int winCount, int loseCount)
         {
             this.playerName = playerName;

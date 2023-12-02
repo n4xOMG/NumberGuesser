@@ -83,7 +83,7 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "My guess is:";
             // 
-            // Game
+            // NumberGuessingGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,8 +93,8 @@
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.lblGuess);
             this.Controls.Add(this.txtInput);
-            this.Name = "Game";
-            this.Text = "Form1";
+            this.Name = "NumberGuessingGame";
+            this.Text = "Game";
             this.ResumeLayout(false);
             this.PerformLayout();
 

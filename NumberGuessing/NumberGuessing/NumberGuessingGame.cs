@@ -1,13 +1,7 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 
 namespace NumberGuessing
 {
@@ -24,14 +18,17 @@ namespace NumberGuessing
         int gameID = 0;
         public NumberGuessingGame()
         {
-            string pname = Interaction.InputBox("Please enter your name", "Welcome!", "Player name: ", -1, -1);
-            if (string.IsNullOrEmpty(pname))
+            string pname = "";
+            while (string.IsNullOrEmpty(pname.Trim()))
             {
-                MessageBox.Show("Please enter your name!");
-                this.Close();
-                return;
+                pname = Interaction.InputBox("Please enter your name", "Welcome!", "", -1, -1);
+                if (string.IsNullOrEmpty(pname.Trim()))
+                {
+                    MessageBox.Show("Please enter your name!");
+                }
             }
-            
+            this.Show();
+
             if (playerDAO.checkName(pname) != null)
             {
                 player = getPlayerInfo(pname);
@@ -40,11 +37,11 @@ namespace NumberGuessing
             {
                 player = new Player(pname, 0, 0, 0);
                 playerDAO.Add(player);
-                player=getPlayerInfo(pname);                
+                player = getPlayerInfo(pname);
             }
             InitializeComponent();
             player.PlayCount++;
-            loadNum(1, 100);
+            loadNum(1, 101);
             game = new Games(player.PlayerID, 0, 0, "NA");
             gameID = gameDAO.Add(game);
 
@@ -65,10 +62,10 @@ namespace NumberGuessing
         }
         private void loadNum(int n1, int n2)
         {
-            Games g=new Games();
+            Games g = new Games();
             number = g.getRandomNum(n1, n2);
-            MessageBox.Show("The number is"+number);
-            
+            MessageBox.Show("The number is" + number);
+
         }
         private bool IsValidNumber(string input)
         {
@@ -85,8 +82,8 @@ namespace NumberGuessing
             var result = MessageBox.Show("Do you want to continue?", "Game Over", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                loadNum(1, 100);
-                
+                loadNum(1, 101);
+
                 count = 0;
                 guessedNumbers.Clear();
                 player.PlayCount++;
@@ -105,7 +102,7 @@ namespace NumberGuessing
 
             if (IsValidNumber(txtInput.Text))
             {
-                string winorlose="";
+                string winorlose = "";
                 int i = Convert.ToInt32(txtInput.Text);
                 if (guessedNumbers.Contains(i))
                 {
@@ -127,7 +124,7 @@ namespace NumberGuessing
                             player.WinCount += 1;
                             update(winorlose);
                             EndGame(winorlose);
-                                                   
+
                         }
                         else
                         {
@@ -137,8 +134,8 @@ namespace NumberGuessing
                             game.GuessCount = count;
                             player.WinCount += 1;
                             update(winorlose);
-                            EndGame(winorlose);                            
-                                                   
+                            EndGame(winorlose);
+
                         }
                     }
                     else if (count >= 10)
@@ -149,8 +146,8 @@ namespace NumberGuessing
                         player.LoseCount += 1;
                         winorlose = "lose";
                         update(winorlose);
-                        EndGame(winorlose);                        
-                                              
+                        EndGame(winorlose);
+
                     }
                     else if (i < number)
                     {
@@ -193,7 +190,7 @@ namespace NumberGuessing
                 MessageBox.Show("Please enter a valid number from 1 to 100!");
             }
         }
-        
+
         private void update(string winorlose)
         {
             Player p = new Player(player.PlayCount, player.WinCount, player.LoseCount, player.PlayerID);

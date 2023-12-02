@@ -40,6 +40,12 @@ namespace NumberGuessing
 
         public int getRandomNum(int n1, int n2)
         {
+            if (n1 > n2)
+            {
+                int temp = n1;
+                n1 = n2;
+                n2 = temp;
+            }
             return Random.Next(n1, n2);
         }
     }

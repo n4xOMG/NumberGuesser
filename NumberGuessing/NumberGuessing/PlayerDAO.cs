@@ -12,11 +12,6 @@ namespace NumberGuessing
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.cnnStr);
         DBConnection db = new DBConnection();
-        public DataTable LoadList()
-        {
-            string sqlStr = string.Format("SELECT * FROM Players where playerID != null ");
-            return db.LoadList(sqlStr);
-        }
         public void Add(Player p)
         {
             string sqlStr = string.Format("insert into Players values('" + p.PlayerName + "','" + p.PlayCount + "','" + p.WinCount + "','" + p.LoseCount + "')");
